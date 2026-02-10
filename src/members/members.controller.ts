@@ -7,9 +7,8 @@ import { CreateMemberDto } from'./dto/create-members.dto';
 import { UpdateMemberDto } from'./dto/update-members.dto';
 @Controller('members')
 export class MembersController {
-    constructor(private readonly membersService:
-        MembersService) { }
-    @Post('/addmember')
+    constructor(private readonly membersService: MembersService) { }
+    @Post()
     create(@Body() dto: CreateMemberDto) {
         return this.membersService.create(dto);
     }
